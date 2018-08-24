@@ -9,6 +9,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.0'
-    implementation project(':ncb-common')
-    implementation project(':ncs-user')
+    implementation project(':nc-common')
+    implementation project(':nc-user')
 }

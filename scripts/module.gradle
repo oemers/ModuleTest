@@ -1,4 +1,4 @@
-if (isModule.toBoolean()) {
+if (isIndependent()) {
     apply plugin: 'com.android.application'
 } else {
     apply plugin: 'com.android.library'
@@ -17,9 +17,9 @@ android {
         if (isModule.toBoolean()){
             //applicationId "com.ryy.${this.name}"
             //println("this == ${this.name} , applicationId")
-        }
 
-        resourcePrex
+        }
+        //println(project.buildFile.name)
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -32,7 +32,7 @@ android {
 
     sourceSets {
         main {
-            if (isModule.toBoolean()) {
+            if (isIndependent()) {
                 manifest.srcFile 'src/main/debug/AndroidManifest.xml'
             } else {
                 manifest.srcFile 'src/main/AndroidManifest.xml'
@@ -51,4 +51,38 @@ android {
         }
     }
 
+    dataBinding {
+        enabled true
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+/**
+ * 通过修改 project - gradle.properties 的 isModule 值来控制 是否可以独立编译
+ * @return app可以独立编译，NCComponent中的项目可以独立编译
+ */
+def isIndependent() {
+    //是app module ，独立编译
+    if (this.name.startsWith("app")) {
+        println("app is independent! this.name = ${this.name}")
+        return true
+    }
+
+    //没有开启独立编译选项，所以为library
+    if (!isModule.toBoolean()) {
+        println("not independent!")
+        return false
+    }
+
+    //开启了独立编译选项，但是不属于业务组件，所以为 library
+    if (!project.buildFile.path.contains("NCComponent")) {
+        println("this module's is not [NCComponent] , this.name = ${this.name}")
+        return false
+    }
+    println("this module is independent!")
+    return true
 }

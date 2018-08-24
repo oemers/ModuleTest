@@ -29,7 +29,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
 
-    implementation project(':ncb-common')
+    implementation project(':nc-common')
     if (!isModule.toBoolean()){
         implementation project(':nc-login')
         api project(':nc-main')

@@ -1,9 +1,9 @@
-include ':app', ':ncb-common', ':nc-login', ':nc-mine', ':nc-main', ':ncs-user'
+include ':app', ':nc-common', ':nc-login', ':nc-mine', ':nc-main', ':nc-user'
 
-project(':ncb-common').projectDir = new File('base/ncb-common')
+project(':nc-common').projectDir = new File('NCBase/nc-common')
 
-project(':nc-login').projectDir = new File('component/nc-login')
-project(':nc-mine').projectDir = new File('component/nc-mine')
-project(':nc-main').projectDir = new File('component/nc-main')
+project(':nc-login').projectDir = new File('NCComponent/nc-login')
+project(':nc-mine').projectDir = new File('NCComponent/nc-mine')
+project(':nc-main').projectDir = new File('NCComponent/nc-main')
 
-project(':ncs-user').projectDir = new File('service/ncs-user')
+project(':nc-user').projectDir = new File('NCService/nc-user')

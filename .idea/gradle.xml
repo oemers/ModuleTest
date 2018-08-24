@@ -8,12 +8,12 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/NCBase/nc-common" />
+            <option value="$PROJECT_DIR$/NCComponent/nc-login" />
+            <option value="$PROJECT_DIR$/NCComponent/nc-main" />
+            <option value="$PROJECT_DIR$/NCComponent/nc-mine" />
+            <option value="$PROJECT_DIR$/NCService/nc-user" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/base/ncb-common" />
-            <option value="$PROJECT_DIR$/component/nc-login" />
-            <option value="$PROJECT_DIR$/component/nc-main" />
-            <option value="$PROJECT_DIR$/component/nc-mine" />
-            <option value="$PROJECT_DIR$/service/ncs-user" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
