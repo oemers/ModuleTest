@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ryy.nc_login" >
+
+    <application android:theme="@style/BaseTheme">
+        <activity android:name=".LoginActivity">
+        </activity>
+    </application>
+</manifest>

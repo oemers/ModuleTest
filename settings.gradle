@@ -1,0 +1,9 @@
+include ':app', ':ncb-common', ':nc-login', ':nc-mine', ':nc-main', ':ncs-user'
+
+project(':ncb-common').projectDir = new File('base/ncb-common')
+
+project(':nc-login').projectDir = new File('component/nc-login')
+project(':nc-mine').projectDir = new File('component/nc-mine')
+project(':nc-main').projectDir = new File('component/nc-main')
+
+project(':ncs-user').projectDir = new File('service/ncs-user')
